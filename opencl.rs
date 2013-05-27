@@ -23,6 +23,7 @@ extern { }
 extern { }
 
 macro_rules! cl_type(($name:ident, $t:ty) => (pub type $name = $t;))
+macro_rules! cl_error(($name:ident, $v:expr) => (pub static $name: cl_int = $v;))
 macro_rules! cl_constant(($name:ident, $v:expr) => (pub static $name: cl_uint = $v;))
 
 /*
@@ -103,54 +104,54 @@ pub struct cl_image_format {
 }
 
 /* Error Codes */
-cl_constant!(CL_SUCCESS, 0)
-cl_constant!(CL_DEVICE_NOT_FOUND, -1)
-cl_constant!(CL_DEVICE_NOT_AVAILABLE, -2)
-cl_constant!(CL_COMPILER_NOT_AVAILABLE, -3)
-cl_constant!(CL_MEM_OBJECT_ALLOCATION_FAILURE, -4)
-cl_constant!(CL_OUT_OF_RESOURCES, -5)
-cl_constant!(CL_OUT_OF_HOST_MEMORY, -6)
-cl_constant!(CL_PROFILING_INFO_NOT_AVAILABLE, -7)
-cl_constant!(CL_MEM_COPY_OVERLAP, -8)
-cl_constant!(CL_IMAGE_FORMAT_MISMATCH, -9)
-cl_constant!(CL_IMAGE_FORMAT_NOT_SUPPORTED, -10)
-cl_constant!(CL_BUILD_PROGRAM_FAILURE, -11)
-cl_constant!(CL_MAP_FAILURE, -12)
+cl_error!(CL_SUCCESS, 0)
+cl_error!(CL_DEVICE_NOT_FOUND, -1)
+cl_error!(CL_DEVICE_NOT_AVAILABLE, -2)
+cl_error!(CL_COMPILER_NOT_AVAILABLE, -3)
+cl_error!(CL_MEM_OBJECT_ALLOCATION_FAILURE, -4)
+cl_error!(CL_OUT_OF_RESOURCES, -5)
+cl_error!(CL_OUT_OF_HOST_MEMORY, -6)
+cl_error!(CL_PROFILING_INFO_NOT_AVAILABLE, -7)
+cl_error!(CL_MEM_COPY_OVERLAP, -8)
+cl_error!(CL_IMAGE_FORMAT_MISMATCH, -9)
+cl_error!(CL_IMAGE_FORMAT_NOT_SUPPORTED, -10)
+cl_error!(CL_BUILD_PROGRAM_FAILURE, -11)
+cl_error!(CL_MAP_FAILURE, -12)
 
-cl_constant!(CL_INVALID_VALUE, -30)
-cl_constant!(CL_INVALID_DEVICE_TYPE, -31)
-cl_constant!(CL_INVALID_PLATFORM, -32)
-cl_constant!(CL_INVALID_DEVICE, -33)
-cl_constant!(CL_INVALID_CONTEXT, -34)
-cl_constant!(CL_INVALID_QUEUE_PROPERTIES, -35)
-cl_constant!(CL_INVALID_COMMAND_QUEUE, -36)
-cl_constant!(CL_INVALID_HOST_PTR, -37)
-cl_constant!(CL_INVALID_MEM_OBJECT, -38)
-cl_constant!(CL_INVALID_IMAGE_FORMAT_DESCRIPTOR, -39)
-cl_constant!(CL_INVALID_IMAGE_SIZE, -40)
-cl_constant!(CL_INVALID_SAMPLER, -41)
-cl_constant!(CL_INVALID_BINARY, -42)
-cl_constant!(CL_INVALID_BUILD_OPTIONS, -43)
-cl_constant!(CL_INVALID_PROGRAM, -44)
-cl_constant!(CL_INVALID_PROGRAM_EXECUTABLE, -45)
-cl_constant!(CL_INVALID_KERNEL_NAME, -46)
-cl_constant!(CL_INVALID_KERNEL_DEFINITION, -47)
-cl_constant!(CL_INVALID_KERNEL, -48)
-cl_constant!(CL_INVALID_ARG_INDEX, -49)
-cl_constant!(CL_INVALID_ARG_VALUE, -50)
-cl_constant!(CL_INVALID_ARG_SIZE, -51)
-cl_constant!(CL_INVALID_KERNEL_ARGS, -52)
-cl_constant!(CL_INVALID_WORK_DIMENSION, -53)
-cl_constant!(CL_INVALID_WORK_GROUP_SIZE, -54)
-cl_constant!(CL_INVALID_WORK_ITEM_SIZE, -55)
-cl_constant!(CL_INVALID_GLOBAL_OFFSET, -56)
-cl_constant!(CL_INVALID_EVENT_WAIT_LIST, -57)
-cl_constant!(CL_INVALID_EVENT, -58)
-cl_constant!(CL_INVALID_OPERATION, -59)
-cl_constant!(CL_INVALID_GL_OBJECT, -60)
-cl_constant!(CL_INVALID_BUFFER_SIZE, -61)
-cl_constant!(CL_INVALID_MIP_LEVEL, -62)
-cl_constant!(CL_INVALID_GLOBAL_WORK_SIZE, -63)
+cl_error!(CL_INVALID_VALUE, -30)
+cl_error!(CL_INVALID_DEVICE_TYPE, -31)
+cl_error!(CL_INVALID_PLATFORM, -32)
+cl_error!(CL_INVALID_DEVICE, -33)
+cl_error!(CL_INVALID_CONTEXT, -34)
+cl_error!(CL_INVALID_QUEUE_PROPERTIES, -35)
+cl_error!(CL_INVALID_COMMAND_QUEUE, -36)
+cl_error!(CL_INVALID_HOST_PTR, -37)
+cl_error!(CL_INVALID_MEM_OBJECT, -38)
+cl_error!(CL_INVALID_IMAGE_FORMAT_DESCRIPTOR, -39)
+cl_error!(CL_INVALID_IMAGE_SIZE, -40)
+cl_error!(CL_INVALID_SAMPLER, -41)
+cl_error!(CL_INVALID_BINARY, -42)
+cl_error!(CL_INVALID_BUILD_OPTIONS, -43)
+cl_error!(CL_INVALID_PROGRAM, -44)
+cl_error!(CL_INVALID_PROGRAM_EXECUTABLE, -45)
+cl_error!(CL_INVALID_KERNEL_NAME, -46)
+cl_error!(CL_INVALID_KERNEL_DEFINITION, -47)
+cl_error!(CL_INVALID_KERNEL, -48)
+cl_error!(CL_INVALID_ARG_INDEX, -49)
+cl_error!(CL_INVALID_ARG_VALUE, -50)
+cl_error!(CL_INVALID_ARG_SIZE, -51)
+cl_error!(CL_INVALID_KERNEL_ARGS, -52)
+cl_error!(CL_INVALID_WORK_DIMENSION, -53)
+cl_error!(CL_INVALID_WORK_GROUP_SIZE, -54)
+cl_error!(CL_INVALID_WORK_ITEM_SIZE, -55)
+cl_error!(CL_INVALID_GLOBAL_OFFSET, -56)
+cl_error!(CL_INVALID_EVENT_WAIT_LIST, -57)
+cl_error!(CL_INVALID_EVENT, -58)
+cl_error!(CL_INVALID_OPERATION, -59)
+cl_error!(CL_INVALID_GL_OBJECT, -60)
+cl_error!(CL_INVALID_BUFFER_SIZE, -61)
+cl_error!(CL_INVALID_MIP_LEVEL, -62)
+cl_error!(CL_INVALID_GLOBAL_WORK_SIZE, -63)
 
 /* OpenCL Version */
 cl_constant!(CL_VERSION_1_0, 1)
@@ -421,340 +422,340 @@ cl_constant!(CL_PROFILING_COMMAND_END, 0x1283)
 #[nolink]
 pub extern {
     /* Platform API */
-    fn clGetPlatformIDs(num_entries: cl_uint,
-                        platforms: *cl_platform_id,
-                        num_platforms: *cl_uint) -> cl_int;
-    fn clGetPlatformInfo(platform: cl_platform_id,
-                         paran_name: cl_platform_info,
-                         param_value_size: libc::size_t,
-                         param_value: *libc::c_void,
-                         param_value_size_ret: *mut libc::size_t) -> cl_int;
-
-    /* Device APIs */
-    fn clGetDeviceIDs(platform: cl_platform_id,
-                      device_type: cl_device_type,
-                      num_entries: cl_uint,
-                      devices: *cl_device_id,
-                      num_devices: *cl_uint) -> cl_int;
-    fn clGetDeviceInfo(device: cl_device_id,
-                       param_name: cl_device_info,
-                       param_value_size: libc::size_t,
-                       param_value: *libc::c_void,
-                       param_value_size_ret: *libc::size_t) -> cl_int;
-
-    /* Context APIs */
-    fn clCreateContext(properties: *cl_context_properties,
-                       num_devices: cl_uint,
-                       devices: *cl_device_id,
-                       pfn_notify: extern fn (*libc::c_char, *libc::c_void, libc::size_t, *libc::c_void),
-                       user_data: *libc::c_void,
-                       errcode_ret: *cl_int) -> cl_context;
-    fn clCreateContextFromType(properties: *cl_context_properties,
-                               device_type: cl_device_type,
-                               pfn_notify: extern fn (*libc::c_char, *libc::c_void, libc::size_t, *libc::c_void),
-                               user_data: *libc::c_void,
-                               errcode_ret: *cl_int) -> cl_context;
-    fn clRetainContext(context: cl_context) -> cl_int;
-    fn clReleaseContext(context: cl_context) -> cl_int;
-    fn clGetContextInfo(context: cl_context,
-                        param_name: cl_context_info,
-                        param_value_size: libc::size_t,
-                        param_value: *libc::c_void,
-                        param_value_size_ret: *libc::size_t) -> cl_int;
-
-    /* Command Queue APIs */
-    fn clCreateCommandQueue(context: cl_context,
-                            device: cl_device_id,
-                            properties: cl_command_queue_properties,
-                            errcode_ret: *cl_int) -> cl_command_queue;
-    fn clRetainCommandQueue(command_queue: cl_command_queue) -> cl_int;
-    fn clReleaseCommandQueue(command_queue: cl_command_queue) -> cl_int;
-    fn clGetCommandQueueInfo(command_queue: cl_command_queue,
-                             param_name: cl_command_queue_info,
-                             param_value_size: libc::size_t,
-                             param_value: *libc::c_void,
-                             param_value_size_ret: *libc::size_t) -> cl_int;
-    fn clSetCommandQueueProperty(command_queue: cl_command_queue,
-                                 properties: cl_command_queue_properties,
-                                 enable: cl_bool,
-                                 old_properties: *cl_command_queue_properties) -> cl_int; /* DEPRECATED: From 1.1 (Not thread safe) */
-
-    /* Memory Object APIs */
-    fn clCreateBuffer(context: cl_context,
-                      flags: cl_mem_flags,
-                      size: libc::size_t,
-                      host_ptr: *libc::c_void,
-                      errcode_ret: *cl_int) -> cl_mem;
-    fn clCreateImage2D(context: cl_context,
-                       flags: cl_mem_flags,
-                       image_format: *cl_image_format,
-                       image_width: libc::size_t,
-                       image_height: libc::size_t,
-                       image_row_pitch: libc::size_t,
-                       host_ptr: *libc::c_void,
-                       errcode_ret: *cl_int) -> cl_mem; /* DEPRECATED: From 1.2 */
-    fn clCreateImage3D(context: cl_context,
-                       flags: cl_mem_flags,
-                       image_format: *cl_image_format,
-                       image_width: libc::size_t,
-                       image_height: libc::size_t,
-                       image_depth: libc::size_t,
-                       image_row_pitch: libc::size_t,
-                       image_depth: libc::size_t,
-                       image_row_pitch: libc::size_t,
-                       image_slice_pitch: libc::size_t,
-                       host_ptr: *libc::c_void,
-                       errcode_ret: *cl_int) -> cl_mem; /* DEPRECATED: From 1.2 */
-    fn clRetainMemObject(memobj: cl_mem) -> cl_int;
-    fn clReleaseMemObject(memobj: cl_mem) -> cl_int;
-    fn clGetSupportedImageFormats(context: cl_context,
-                                  flags: cl_mem_flags,
-                                  image_type: cl_mem_object_type,
-                                  num_entries: cl_uint,
-                                  image_formats: *cl_image_format,
-                                  num_image_formats: *cl_uint) -> cl_int;
-    fn clGetMemObjectInfo(memobj: cl_mem,
-                          param_name: cl_mem_info,
-                          param_value_size: libc::size_t,
-                          param_value: *libc::c_void,
-                          param_value_size_ret: *libc::size_t) -> cl_int;
-    fn clGetImageInfo(image: cl_mem,
-                      param_name: cl_image_info,
-                      param_value_size: libc::size_t,
-                      param_value: *libc::c_void,
-                      param_value_size_ret: *libc::size_t) -> cl_int;
-
-    /** Sampler APIs */
-    fn clCreateSampler(context: cl_context,
-                       normalize_coords: cl_bool,
-                       addressing_mode: cl_addressing_mode,
-                       filter_mode: cl_filter_mode,
-                       errcode_ret: *cl_int) -> cl_sampler;
-    fn clRetainSampler(sampler: cl_sampler) -> cl_int;
-    fn clReleaseSampler(sampler: cl_sampler) ->cl_int;
-    fn clGetSamplerInfo(sampler: cl_sampler,
-                        param_name: cl_sampler_info,
-                        param_value_size: libc::size_t,
-                        param_value: *libc::c_void,
-                        param_value_size_ret: *libc::size_t) -> cl_int;
-
-    /* Program Object APIs */
-    fn clCreateProgramWithSource(context: cl_context,
-                                 count: cl_uint,
-                                 strings: **libc::c_char,
-                                 lengths: *libc::size_t,
-                                 errcode_ret: *cl_int) -> cl_program;
-    fn clCreateProgramWithBinary(context: cl_context,
-                                 num_devices: cl_uint,
-                                 device_list: *cl_device_id,
-                                 lengths: *libc::size_t,
-                                 binaries: **libc::c_uchar,
-                                 binary_status: *cl_int,
-                                 errcode_ret: *cl_int) -> cl_program;
-    fn clRetainProgram(program: cl_program) -> cl_int;
-    fn clReleaseProgram(program: cl_program) -> cl_int;
-    fn clBuildProgram(program: cl_program,
-                      num_devices: cl_uint,
-                      device_list: *cl_device_id,
-                      options: *libc::c_char,
-                      pfn_notify: extern fn (cl_program, *libc::c_void),
-                      user_data: *libc::c_void) -> cl_int;
-    fn clUnloadCompiler() -> cl_int; /* DEPRECATED: From 1.2 */
-    fn clGetProgramInfo(program: cl_program,
-                        param_name: cl_program_info,
-                        param_value_size: libc::size_t,
-                        param_value: *libc::c_void,
-                        param_value_size_ret: *libc::size_t) -> cl_int;
-    fn clGetProgramBuildInfo(program: cl_program,
-                             device: cl_device_id,
-                             param_name: cl_program_info,
-                             param_value_size: libc::size_t,
-                             param_value: *libc::c_void,
-                             param_value_size_ret: *libc::size_t) -> cl_int;
-
-    /* Kernel Object APIs */
-    fn clCreateKernel(program: cl_program,
-                      kernel_name: *libc::c_char,
-                      errcode_ret: *cl_int) -> cl_kernel;
-    fn clCreateKernelsInProgram(program: cl_program,
-                                num_kernels: cl_uint,
-                                kernels: *cl_kernel,
-                                num_kernels_ret: *cl_uint) -> cl_int;
-    fn clRetainKernel(kernel: cl_kernel) -> cl_int;
-    fn clReleaseKernel(kernel: cl_kernel) -> cl_int;
-    fn clSetKernelArg(kernel: cl_kernel,
-                      arg_index: cl_uint,
-                      arg_size: libc::size_t,
-                      arg_value: *libc::c_void) -> cl_int;
-    fn clGetKernelInfo(kernel: cl_kernel,
-                       param_name: cl_kernel_info,
-                       param_value_size: libc::size_t,
-                       param_value: *libc::c_void,
-                       param_value_size_ret: *libc::size_t) -> cl_int;
-    fn clGetKernelWorkGroupInfo(kernel: cl_kernel,
-                                device: cl_device_id,
-                                param_name: cl_kernel_work_group_info,
+    unsafe fn clGetPlatformIDs(num_entries: cl_uint,
+                               platforms: *cl_platform_id,
+                               num_platforms: *cl_uint) -> cl_int;
+    unsafe fn clGetPlatformInfo(platform: cl_platform_id,
+                                paran_name: cl_platform_info,
                                 param_value_size: libc::size_t,
                                 param_value: *libc::c_void,
-                                param_value_size_ret: *libc::size_t) -> cl_int;
+                                param_value_size_ret: *mut libc::size_t) -> cl_int;
 
-    /* Event Object APIs */
-    fn clWaitForEvents(num_events: cl_uint,
-                       event_list: *cl_event) -> cl_int;
-    fn clGetEventInfo(event: cl_event,
-                      param_name: cl_event_info,
-                      param_value_size: libc::size_t,
-                      param_value: *libc::c_void,
-                      param_value_size_ret: *libc::size_t) -> cl_int;
-    fn clRetainEvent(event: cl_event) -> cl_int;
-    fn clReleaseEvent(event: cl_event) -> cl_int;
+    /* Device APIs */
+    unsafe fn clGetDeviceIDs(platform: cl_platform_id,
+                             device_type: cl_device_type,
+                             num_entries: cl_uint,
+                             devices: *cl_device_id,
+                             num_devices: *cl_uint) -> cl_int;
+    unsafe fn clGetDeviceInfo(device: cl_device_id,
+                              param_name: cl_device_info,
+                              param_value_size: libc::size_t,
+                              param_value: *libc::c_void,
+                              param_value_size_ret: *libc::size_t) -> cl_int;
 
-    /* Profiling APIs */
-    fn clGetEventProfilingInfo(event: cl_event,
-                               param_name: cl_profiling_info,
+    /* Context APIs */
+    unsafe fn clCreateContext(properties: *cl_context_properties,
+                              num_devices: cl_uint,
+                              devices: *cl_device_id,
+                              pfn_notify: extern unsafe fn (*libc::c_char, *libc::c_void, libc::size_t, *libc::c_void),
+                              user_data: *libc::c_void,
+                              errcode_ret: *cl_int) -> cl_context;
+    unsafe fn clCreateContextFromType(properties: *cl_context_properties,
+                                      device_type: cl_device_type,
+                                      pfn_notify: extern unsafe fn (*libc::c_char, *libc::c_void, libc::size_t, *libc::c_void),
+                                      user_data: *libc::c_void,
+                                      errcode_ret: *cl_int) -> cl_context;
+    unsafe fn clRetainContext(context: cl_context) -> cl_int;
+    unsafe fn clReleaseContext(context: cl_context) -> cl_int;
+    unsafe fn clGetContextInfo(context: cl_context,
+                               param_name: cl_context_info,
                                param_value_size: libc::size_t,
                                param_value: *libc::c_void,
                                param_value_size_ret: *libc::size_t) -> cl_int;
 
+    /* Command Queue APIs */
+    unsafe fn clCreateCommandQueue(context: cl_context,
+                                   device: cl_device_id,
+                                   properties: cl_command_queue_properties,
+                                   errcode_ret: *cl_int) -> cl_command_queue;
+    unsafe fn clRetainCommandQueue(command_queue: cl_command_queue) -> cl_int;
+    unsafe fn clReleaseCommandQueue(command_queue: cl_command_queue) -> cl_int;
+    unsafe fn clGetCommandQueueInfo(command_queue: cl_command_queue,
+                                    param_name: cl_command_queue_info,
+                                    param_value_size: libc::size_t,
+                                    param_value: *libc::c_void,
+                                    param_value_size_ret: *libc::size_t) -> cl_int;
+    unsafe fn clSetCommandQueueProperty(command_queue: cl_command_queue,
+                                        properties: cl_command_queue_properties,
+                                        enable: cl_bool,
+                                        old_properties: *cl_command_queue_properties) -> cl_int; /* DEPRECATED: From 1.1 (Not thread safe) */
+
+    /* Memory Object APIs */
+    unsafe fn clCreateBuffer(context: cl_context,
+                             flags: cl_mem_flags,
+                             size: libc::size_t,
+                             host_ptr: *libc::c_void,
+                             errcode_ret: *cl_int) -> cl_mem;
+    unsafe fn clCreateImage2D(context: cl_context,
+                              flags: cl_mem_flags,
+                              image_format: *cl_image_format,
+                              image_width: libc::size_t,
+                              image_height: libc::size_t,
+                              image_row_pitch: libc::size_t,
+                              host_ptr: *libc::c_void,
+                              errcode_ret: *cl_int) -> cl_mem; /* DEPRECATED: From 1.2 */
+    unsafe fn clCreateImage3D(context: cl_context,
+                              flags: cl_mem_flags,
+                              image_format: *cl_image_format,
+                              image_width: libc::size_t,
+                              image_height: libc::size_t,
+                              image_depth: libc::size_t,
+                              image_row_pitch: libc::size_t,
+                              image_depth: libc::size_t,
+                              image_row_pitch: libc::size_t,
+                              image_slice_pitch: libc::size_t,
+                              host_ptr: *libc::c_void,
+                              errcode_ret: *cl_int) -> cl_mem; /* DEPRECATED: From 1.2 */
+    unsafe fn clRetainMemObject(memobj: cl_mem) -> cl_int;
+    unsafe fn clReleaseMemObject(memobj: cl_mem) -> cl_int;
+    unsafe fn clGetSupportedImageFormats(context: cl_context,
+                                         flags: cl_mem_flags,
+                                         image_type: cl_mem_object_type,
+                                         num_entries: cl_uint,
+                                         image_formats: *cl_image_format,
+                                         num_image_formats: *cl_uint) -> cl_int;
+    unsafe fn clGetMemObjectInfo(memobj: cl_mem,
+                                 param_name: cl_mem_info,
+                                 param_value_size: libc::size_t,
+                                 param_value: *libc::c_void,
+                                 param_value_size_ret: *libc::size_t) -> cl_int;
+    unsafe fn clGetImageInfo(image: cl_mem,
+                             param_name: cl_image_info,
+                             param_value_size: libc::size_t,
+                             param_value: *libc::c_void,
+                             param_value_size_ret: *libc::size_t) -> cl_int;
+
+    /** Sampler APIs */
+    unsafe fn clCreateSampler(context: cl_context,
+                              normalize_coords: cl_bool,
+                              addressing_mode: cl_addressing_mode,
+                              filter_mode: cl_filter_mode,
+                              errcode_ret: *cl_int) -> cl_sampler;
+    unsafe fn clRetainSampler(sampler: cl_sampler) -> cl_int;
+    unsafe fn clReleaseSampler(sampler: cl_sampler) ->cl_int;
+    unsafe fn clGetSamplerInfo(sampler: cl_sampler,
+                               param_name: cl_sampler_info,
+                               param_value_size: libc::size_t,
+                               param_value: *libc::c_void,
+                               param_value_size_ret: *libc::size_t) -> cl_int;
+
+    /* Program Object APIs */
+    unsafe fn clCreateProgramWithSource(context: cl_context,
+                                        count: cl_uint,
+                                        strings: **libc::c_char,
+                                        lengths: *libc::size_t,
+                                        errcode_ret: *cl_int) -> cl_program;
+    unsafe fn clCreateProgramWithBinary(context: cl_context,
+                                        num_devices: cl_uint,
+                                        device_list: *cl_device_id,
+                                        lengths: *libc::size_t,
+                                        binaries: **libc::c_uchar,
+                                        binary_status: *cl_int,
+                                        errcode_ret: *cl_int) -> cl_program;
+    unsafe fn clRetainProgram(program: cl_program) -> cl_int;
+    unsafe fn clReleaseProgram(program: cl_program) -> cl_int;
+    unsafe fn clBuildProgram(program: cl_program,
+                             num_devices: cl_uint,
+                             device_list: *cl_device_id,
+                             options: *libc::c_char,
+                             pfn_notify: extern unsafe fn (cl_program, *libc::c_void),
+                             user_data: *libc::c_void) -> cl_int;
+    unsafe fn clUnloadCompiler() -> cl_int; /* DEPRECATED: From 1.2 */
+    unsafe fn clGetProgramInfo(program: cl_program,
+                               param_name: cl_program_info,
+                               param_value_size: libc::size_t,
+                               param_value: *libc::c_void,
+                               param_value_size_ret: *libc::size_t) -> cl_int;
+    unsafe fn clGetProgramBuildInfo(program: cl_program,
+                                    device: cl_device_id,
+                                    param_name: cl_program_info,
+                                    param_value_size: libc::size_t,
+                                    param_value: *libc::c_void,
+                                    param_value_size_ret: *libc::size_t) -> cl_int;
+
+    /* Kernel Object APIs */
+    unsafe fn clCreateKernel(program: cl_program,
+                             kernel_name: *libc::c_char,
+                             errcode_ret: *cl_int) -> cl_kernel;
+    unsafe fn clCreateKernelsInProgram(program: cl_program,
+                                       num_kernels: cl_uint,
+                                       kernels: *cl_kernel,
+                                       num_kernels_ret: *cl_uint) -> cl_int;
+    unsafe fn clRetainKernel(kernel: cl_kernel) -> cl_int;
+    unsafe fn clReleaseKernel(kernel: cl_kernel) -> cl_int;
+    unsafe fn clSetKernelArg(kernel: cl_kernel,
+                             arg_index: cl_uint,
+                             arg_size: libc::size_t,
+                             arg_value: *libc::c_void) -> cl_int;
+    unsafe fn clGetKernelInfo(kernel: cl_kernel,
+                              param_name: cl_kernel_info,
+                              param_value_size: libc::size_t,
+                              param_value: *libc::c_void,
+                              param_value_size_ret: *libc::size_t) -> cl_int;
+    unsafe fn clGetKernelWorkGroupInfo(kernel: cl_kernel,
+                                       device: cl_device_id,
+                                       param_name: cl_kernel_work_group_info,
+                                       param_value_size: libc::size_t,
+                                       param_value: *libc::c_void,
+                                       param_value_size_ret: *libc::size_t) -> cl_int;
+
+    /* Event Object APIs */
+    unsafe fn clWaitForEvents(num_events: cl_uint,
+                              event_list: *cl_event) -> cl_int;
+    unsafe fn clGetEventInfo(event: cl_event,
+                             param_name: cl_event_info,
+                             param_value_size: libc::size_t,
+                             param_value: *libc::c_void,
+                             param_value_size_ret: *libc::size_t) -> cl_int;
+    unsafe fn clRetainEvent(event: cl_event) -> cl_int;
+    unsafe fn clReleaseEvent(event: cl_event) -> cl_int;
+
+    /* Profiling APIs */
+    unsafe fn clGetEventProfilingInfo(event: cl_event,
+                                      param_name: cl_profiling_info,
+                                      param_value_size: libc::size_t,
+                                      param_value: *libc::c_void,
+                                      param_value_size_ret: *libc::size_t) -> cl_int;
+
     /* Flush and Finish APIs */
-    fn clFlush(command_queue: cl_command_queue) -> cl_int;
-    fn clFinish(command_queue: cl_command_queue) -> cl_int;
+    unsafe fn clFlush(command_queue: cl_command_queue) -> cl_int;
+    unsafe fn clFinish(command_queue: cl_command_queue) -> cl_int;
 
     /* Enqueued Commands APIs */
-    fn clEnqueueReadBuffer(command_queue: cl_command_queue,
-                           buffer: cl_mem,
-                           blocking_read: cl_bool,
-                           offset: libc::size_t,
-                           cb: libc::size_t,
-                           ptr: *libc::c_void,
-                           num_events_in_wait_list: cl_uint,
-                           event_wait_list: *cl_event,
-                           event: *cl_event) -> cl_int;
-    fn clEnqueueWriteBuffer(command_queue: cl_command_queue,
-                            buffer: cl_mem,
-                            blocking_write: cl_bool,
-                            offset: libc::size_t,
-                            cb: libc::size_t,
-                            ptr: *libc::c_void,
+    unsafe fn clEnqueueReadBuffer(command_queue: cl_command_queue,
+                                  buffer: cl_mem,
+                                  blocking_read: cl_bool,
+                                  offset: libc::size_t,
+                                  cb: libc::size_t,
+                                  ptr: *libc::c_void,
+                                  num_events_in_wait_list: cl_uint,
+                                  event_wait_list: *cl_event,
+                                  event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueWriteBuffer(command_queue: cl_command_queue,
+                                   buffer: cl_mem,
+                                   blocking_write: cl_bool,
+                                   offset: libc::size_t,
+                                   cb: libc::size_t,
+                                   ptr: *libc::c_void,
+                                   num_events_in_wait_list: cl_uint,
+                                   event_wait_list: *cl_event,
+                                   event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueCopyBuffer(command_queue: cl_command_queue,
+                                  src_buffer: cl_mem,
+                                  dst_buffer: cl_mem,
+                                  src_offset: libc::size_t,
+                                  dst_offset: libc::size_t,
+                                  cb: libc::size_t,
+                                  num_events_in_wait_list: cl_uint,
+                                  event_wait_list: *cl_event,
+                                  event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueReadImage(command_queue: cl_command_queue,
+                                 image: cl_mem,
+                                 blocking_read: cl_bool,
+                                 origin: *libc::size_t,
+                                 region: *libc::size_t,
+                                 row_pitch: libc::size_t,
+                                 slice_pitch: libc::size_t,
+                                 ptr: *libc::c_void,
+                                 num_events_in_wait_list: cl_uint,
+                                 event_wait_list: *cl_event,
+                                 event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueWriteImage(command_queue: cl_command_queue,
+                                  image: cl_mem,
+                                  blocking_write: cl_bool,
+                                  origin: *libc::size_t,
+                                  region: *libc::size_t,
+                                  input_row_pitch: libc::size_t,
+                                  input_slice_pitch: libc::size_t,
+                                  ptr: *libc::c_void,
+                                  num_events_in_wait_list: cl_uint,
+                                  event_wait_list: *cl_event,
+                                  event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueCopyImage(command_queue: cl_command_queue,
+                                 src_image: cl_mem,
+                                 dst_image: cl_mem,
+                                 src_origin: *libc::size_t,
+                                 dst_origin: *libc::size_t,
+                                 region: *libc::size_t,
+                                 num_events_in_wait_list: cl_uint,
+                                 event_wait_list: *cl_event,
+                                 event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueCopyImageToBuffer(command_queue: cl_command_queue,
+                                         src_image: cl_mem,
+                                         dst_buffer: cl_mem,
+                                         src_origin: *libc::size_t,
+                                         region: *libc::size_t,
+                                         dst_offset: libc::size_t,
+                                         num_events_in_wait_list: cl_uint,
+                                         event_wait_list: *cl_event,
+                                         event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueCopyBufferToImage(command_queue: cl_command_queue,
+                                         src_buffer: cl_mem,
+                                         dst_image: cl_mem,
+                                         src_offset: libc::size_t,
+                                         dst_origin: *libc::size_t,
+                                         region: *libc::size_t,
+                                         num_events_in_wait_list: cl_uint,
+                                         event_wait_list: *cl_event,
+                                         event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueMapBuffer(command_queue: cl_command_queue,
+                                 buffer: cl_mem,
+                                 blocking_map: cl_bool,
+                                 map_flags: cl_map_flags,
+                                 offset: libc::size_t,
+                                 cb: libc::size_t,
+                                 num_events_in_wait_list: cl_uint,
+                                 event_wait_list: *cl_event,
+                                 event: *cl_event,
+                                 errorcode_ret: *cl_int);
+    unsafe fn clEnqueueMapImage(command_queue: cl_command_queue,
+                                image: cl_mem,
+                                blocking_map: cl_bool,
+                                map_flags: cl_map_flags,
+                                origin: *libc::size_t,
+                                region: *libc::size_t,
+                                image_row_pitch: libc::size_t,
+                                image_slice_pitch: libc::size_t,
+                                num_events_in_wait_list: cl_uint,
+                                event_wait_list: *cl_event,
+                                event: *cl_event,
+                                errorcode_ret: *cl_int);
+    unsafe fn clEnqueueUnmapMemObject(command_queue: cl_command_queue,
+                                      memobj: cl_mem,
+                                      mapped_ptr: *libc::c_void,
+                                      num_events_in_wait_list: cl_uint,
+                                      event_wait_list: *cl_event,
+                                      event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueNDRangeKernel(command_queue: cl_command_queue,
+                                     kernel: cl_kernel,
+                                     work_dim: cl_uint,
+                                     global_work_offset: *libc::size_t,
+                                     global_work_size: *libc::size_t,
+                                     local_work_size: *libc::size_t,
+                                     num_events_in_wait_list: cl_uint,
+                                     event_wait_list: *cl_event,
+                                     event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueTask(command_queue: cl_command_queue,
+                            kernel: cl_kernel,
                             num_events_in_wait_list: cl_uint,
                             event_wait_list: *cl_event,
                             event: *cl_event) -> cl_int;
-    fn clEnqueueCopyBuffer(command_queue: cl_command_queue,
-                           src_buffer: cl_mem,
-                           dst_buffer: cl_mem,
-                           src_offset: libc::size_t,
-                           dst_offset: libc::size_t,
-                           cb: libc::size_t,
-                           num_events_in_wait_list: cl_uint,
-                           event_wait_list: *cl_event,
-                           event: *cl_event) -> cl_int;
-    fn clEnqueueReadImage(command_queue: cl_command_queue,
-                          image: cl_mem,
-                          blocking_read: cl_bool,
-                          origin: *libc::size_t,
-                          region: *libc::size_t,
-                          row_pitch: libc::size_t,
-                          slice_pitch: libc::size_t,
-                          ptr: *libc::c_void,
-                          num_events_in_wait_list: cl_uint,
-                          event_wait_list: *cl_event,
-                          event: *cl_event) -> cl_int;
-    fn clEnqueueWriteImage(command_queue: cl_command_queue,
-                           image: cl_mem,
-                           blocking_write: cl_bool,
-                           origin: *libc::size_t,
-                           region: *libc::size_t,
-                           input_row_pitch: libc::size_t,
-                           input_slice_pitch: libc::size_t,
-                           ptr: *libc::c_void,
-                           num_events_in_wait_list: cl_uint,
-                           event_wait_list: *cl_event,
-                           event: *cl_event) -> cl_int;
-    fn clEnqueueCopyImage(command_queue: cl_command_queue,
-                          src_image: cl_mem,
-                          dst_image: cl_mem,
-                          src_origin: *libc::size_t,
-                          dst_origin: *libc::size_t,
-                          region: *libc::size_t,
-                          num_events_in_wait_list: cl_uint,
-                          event_wait_list: *cl_event,
-                          event: *cl_event) -> cl_int;
-    fn clEnqueueCopyImageToBuffer(command_queue: cl_command_queue,
-                                  src_image: cl_mem,
-                                  dst_buffer: cl_mem,
-                                  src_origin: *libc::size_t,
-                                  region: *libc::size_t,
-                                  dst_offset: libc::size_t,
-                                  num_events_in_wait_list: cl_uint,
-                                  event_wait_list: *cl_event,
-                                  event: *cl_event) -> cl_int;
-    fn clEnqueueCopyBufferToImage(command_queue: cl_command_queue,
-                                  src_buffer: cl_mem,
-                                  dst_image: cl_mem,
-                                  src_offset: libc::size_t,
-                                  dst_origin: *libc::size_t,
-                                  region: *libc::size_t,
-                                  num_events_in_wait_list: cl_uint,
-                                  event_wait_list: *cl_event,
-                                  event: *cl_event) -> cl_int;
-    fn clEnqueueMapBuffer(command_queue: cl_command_queue,
-                          buffer: cl_mem,
-                          blocking_map: cl_bool,
-                          map_flags: cl_map_flags,
-                          offset: libc::size_t,
-                          cb: libc::size_t,
-                          num_events_in_wait_list: cl_uint,
-                          event_wait_list: *cl_event,
-                          event: *cl_event,
-                          errorcode_ret: *cl_int);
-    fn clEnqueueMapImage(command_queue: cl_command_queue,
-                         image: cl_mem,
-                         blocking_map: cl_bool,
-                         map_flags: cl_map_flags,
-                         origin: *libc::size_t,
-                         region: *libc::size_t,
-                         image_row_pitch: libc::size_t,
-                         image_slice_pitch: libc::size_t,
-                         num_events_in_wait_list: cl_uint,
-                         event_wait_list: *cl_event,
-                         event: *cl_event,
-                         errorcode_ret: *cl_int);
-    fn clEnqueueUnmapMemObject(command_queue: cl_command_queue,
-                               memobj: cl_mem,
-                               mapped_ptr: *libc::c_void,
-                               num_events_in_wait_list: cl_uint,
-                               event_wait_list: *cl_event,
-                               event: *cl_event) -> cl_int;
-    fn clEnqueueNDRangeKernel(command_queue: cl_command_queue,
-                              kernel: cl_kernel,
-                              work_dim: cl_uint,
-                              global_work_offset: *libc::size_t,
-                              global_work_size: *libc::size_t,
-                              local_work_size: *libc::size_t,
-                              num_events_in_wait_list: cl_uint,
-                              event_wait_list: *cl_event,
-                              event: *cl_event) -> cl_int;
-    fn clEnqueueTask(command_queue: cl_command_queue,
-                     kernel: cl_kernel,
-                     num_events_in_wait_list: cl_uint,
-                     event_wait_list: *cl_event,
-                     event: *cl_event) -> cl_int;
-    fn clEnqueueNativeKernel(command_queue: cl_command_queue,
-                             user_func: extern fn (*libc::c_void),
-                             args: *libc::c_void,
-                             cb_args: libc::size_t,
-                             num_mem_objects: cl_uint,
-                             mem_list: *cl_mem,
-                             args_mem_loc: **libc::c_void,
-                             num_events_in_wait_list: cl_uint,
-                             event_wait_list: *cl_event,
-                             event: *cl_event) -> cl_int;
-    fn clEnqueueMarker(command_queue: cl_command_queue,
-                       event: *cl_event) -> cl_int; /* DEPRECATED: From 1.2 */
-    fn clEnqueueWaitForEvents(command_queue: cl_command_queue,
-                              num_events: cl_uint,
-                              event_list: *cl_event) -> cl_int; /* DEPRECATED: From 1.2 */
-    fn clEnqueueBarrier(command_queue: cl_command_queue) -> cl_int; /* DEPRECATED: From 1.2 */
+    unsafe fn clEnqueueNativeKernel(command_queue: cl_command_queue,
+                                    user_func: extern unsafe fn (*libc::c_void),
+                                    args: *libc::c_void,
+                                    cb_args: libc::size_t,
+                                    num_mem_objects: cl_uint,
+                                    mem_list: *cl_mem,
+                                    args_mem_loc: **libc::c_void,
+                                    num_events_in_wait_list: cl_uint,
+                                    event_wait_list: *cl_event,
+                                    event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueMarker(command_queue: cl_command_queue,
+                              event: *cl_event) -> cl_int; /* DEPRECATED: From 1.2 */
+    unsafe fn clEnqueueWaitForEvents(command_queue: cl_command_queue,
+                                     num_events: cl_uint,
+                                     event_list: *cl_event) -> cl_int; /* DEPRECATED: From 1.2 */
+    unsafe fn clEnqueueBarrier(command_queue: cl_command_queue) -> cl_int; /* DEPRECATED: From 1.2 */
                                 
     /* Extension function access
      *
@@ -763,7 +764,7 @@ pub extern {
      * check to make sure the address is not NULL, before using or
      * or calling the returned function address.
      */
-    fn clGetExtensionFunctionAddress(func_name: *libc::c_char); /* DEPRECATED: From 1.2 */
+    unsafe fn clGetExtensionFunctionAddress(func_name: *libc::c_char); /* DEPRECATED: From 1.2 */
 }
 
 /*
@@ -839,66 +840,66 @@ cl_constant!(CL_BUFFER_CREATE_TYPE_REGION, 0x1220)
 #[nolink]
 pub extern {
     /* Memory Object APIs */
-    fn clCreateSubBuffer(buffer: cl_mem,
-                        flags: cl_mem_flags,
-                        buffer_create_type: cl_buffer_create_type,
-                        buffer_create_info: *libc::c_void,
-                        errcode_ret: *cl_int) -> cl_mem;
-    fn clSetMemObjectDestructorCallback(memobj: cl_mem,
-                                        pfn_notify: extern fn (cl_mem, *libc::c_void),
-                                        user_data: *libc::c_void) -> cl_int;
+    unsafe fn clCreateSubBuffer(buffer: cl_mem,
+                               flags: cl_mem_flags,
+                               buffer_create_type: cl_buffer_create_type,
+                               buffer_create_info: *libc::c_void,
+                               errcode_ret: *cl_int) -> cl_mem;
+    unsafe fn clSetMemObjectDestructorCallback(memobj: cl_mem,
+                                               pfn_notify: extern unsafe fn (cl_mem, *libc::c_void),
+                                               user_data: *libc::c_void) -> cl_int;
 
     /* Event Object APIs  */
-    fn clCreateUserEvent(context: cl_context,
-                         errcode_ret: *cl_int) -> cl_event;
-    fn clSetUserEventStatus(event: cl_event,
-                            execution_status: cl_int) -> cl_int;
-    fn clSetEventCallback(event: cl_event,
-                          command_exec_callback_type: cl_int,
-                          pfn_notify: extern fn (cl_event, cl_int, *libc::c_void),
-                          user_data: *libc::c_void) -> cl_int;
+    unsafe fn clCreateUserEvent(context: cl_context,
+                                errcode_ret: *cl_int) -> cl_event;
+    unsafe fn clSetUserEventStatus(event: cl_event,
+                                   execution_status: cl_int) -> cl_int;
+    unsafe fn clSetEventCallback(event: cl_event,
+                                 command_exec_callback_type: cl_int,
+                                 pfn_notify: extern unsafe fn (cl_event, cl_int, *libc::c_void),
+                                 user_data: *libc::c_void) -> cl_int;
 
     /* Enqueued Commands APIs */
-    fn clEnqueueReadBufferRect(command_queue: cl_command_queue,
-                               buffer: cl_mem,
-                               blocking_read: cl_bool,
-                               buffer_origin: *libc::size_t,
-                               host_origin: *libc::size_t,
-                               region: *libc::size_t,
-                               buffer_row_pitch: libc::size_t,
-                               buffer_slice_pitch: libc::size_t,
-                               host_row_pitch: libc::size_t,
-                               host_slice_pitch: libc::size_t,
-                               ptr: *libc::c_void,
-                               num_events_in_wait_list: cl_uint,
-                               event_wait_list: *cl_event,
-                               event: *cl_event) -> cl_int;
-    fn clEnqueueWriteBufferRect(command_queue: cl_command_queue,
-                                blocking_write: cl_bool,
-                                buffer_origin: *libc::size_t,
-                                host_origin: *libc::size_t,
-                                region: *libc::size_t,
-                                buffer_row_pitch: libc::size_t,
-                                buffer_slice_pitch: libc::size_t,
-                                host_row_pitch: libc::size_t,
-                                host_slice_pitch: libc::size_t,
-                                ptr: *libc::c_void,
-                                num_events_in_wait_list: cl_uint,
-                                event_wait_list: *cl_event,
-                                event: *cl_event) -> cl_int;
-    fn clEnqueueCopyBufferRect(command_queue: cl_command_queue,
-                               src_buffer: cl_mem,
-                               dst_buffer: cl_mem,
-                               src_origin: *libc::size_t,
-                               dst_origin: *libc::size_t,
-                               region: *libc::size_t,
-                               src_row_pitch: libc::size_t,
-                               src_slice_pitch: libc::size_t,
-                               dst_row_pitch: libc::size_t,
-                               dst_slice_pitch: libc::size_t,
-                               num_events_in_wait_list: cl_uint,
-                               event_wait_list: *cl_event,
-                               event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueReadBufferRect(command_queue: cl_command_queue,
+                                      buffer: cl_mem,
+                                      blocking_read: cl_bool,
+                                      buffer_origin: *libc::size_t,
+                                      host_origin: *libc::size_t,
+                                      region: *libc::size_t,
+                                      buffer_row_pitch: libc::size_t,
+                                      buffer_slice_pitch: libc::size_t,
+                                      host_row_pitch: libc::size_t,
+                                      host_slice_pitch: libc::size_t,
+                                      ptr: *libc::c_void,
+                                      num_events_in_wait_list: cl_uint,
+                                      event_wait_list: *cl_event,
+                                      event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueWriteBufferRect(command_queue: cl_command_queue,
+                                       blocking_write: cl_bool,
+                                       buffer_origin: *libc::size_t,
+                                       host_origin: *libc::size_t,
+                                       region: *libc::size_t,
+                                       buffer_row_pitch: libc::size_t,
+                                       buffer_slice_pitch: libc::size_t,
+                                       host_row_pitch: libc::size_t,
+                                       host_slice_pitch: libc::size_t,
+                                       ptr: *libc::c_void,
+                                       num_events_in_wait_list: cl_uint,
+                                       event_wait_list: *cl_event,
+                                       event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueCopyBufferRect(command_queue: cl_command_queue,
+                                      src_buffer: cl_mem,
+                                      dst_buffer: cl_mem,
+                                      src_origin: *libc::size_t,
+                                      dst_origin: *libc::size_t,
+                                      region: *libc::size_t,
+                                      src_row_pitch: libc::size_t,
+                                      src_slice_pitch: libc::size_t,
+                                      dst_row_pitch: libc::size_t,
+                                      dst_slice_pitch: libc::size_t,
+                                      num_events_in_wait_list: cl_uint,
+                                      event_wait_list: *cl_event,
+                                      event: *cl_event) -> cl_int;
 }
 
 /*
@@ -1076,87 +1077,87 @@ cl_constant!(CL_COMMAND_FILL_IMAGE, 0x1208)
 #[nolink]
 pub extern {
     /* Device APIs */
-    fn clCreateSubDevices(in_device: cl_device_id,
-                          properties: *cl_device_partition_property,
-                          num_devices: cl_uint,
-                          out_devices: *cl_device_id,
-                          num_devices_ret: *cl_uint) -> cl_int;
-    fn clRetainDevice(device: cl_device_id) -> cl_int;
-    fn clReleaseDevice(device: cl_device_id) -> cl_int;
+    unsafe fn clCreateSubDevices(in_device: cl_device_id,
+                                 properties: *cl_device_partition_property,
+                                 num_devices: cl_uint,
+                                 out_devices: *cl_device_id,
+                                 num_devices_ret: *cl_uint) -> cl_int;
+    unsafe fn clRetainDevice(device: cl_device_id) -> cl_int;
+    unsafe fn clReleaseDevice(device: cl_device_id) -> cl_int;
 
     /* Memory Object APIs */
-    fn clCreateImage(context: cl_context,
-                     flags: cl_mem_flags,
-                     image_format: *cl_image_format,
-                     image_desc: *cl_image_desc,
-                     host_ptr: *libc::c_void,
-                     errcode_ret: *cl_int) -> cl_mem;
+    unsafe fn clCreateImage(context: cl_context,
+                            flags: cl_mem_flags,
+                            image_format: *cl_image_format,
+                            image_desc: *cl_image_desc,
+                            host_ptr: *libc::c_void,
+                            errcode_ret: *cl_int) -> cl_mem;
 
     /* Program Object APIs */
-    fn clCreateProgramWithBuiltInKernels(context: cl_context,
-                                         num_devices: cl_uint,
-                                         device_list: *cl_device_id,
-                                         kernel_names: *libc::c_char,
-                                         errcode_ret: *cl_int) -> cl_program;
-    fn clCompileProgram(program: cl_program,
-                        num_devices: cl_uint,
-                        device_list: *cl_device_id,
-                        options: *libc::c_char,
-                        num_input_headers: cl_uint,
-                        input_headers: *cl_program,
-                        header_include_names: **libc::c_char,
-                        pfn_notify: extern fn(program: cl_program, user_data: *libc::c_void),
-                        user_data: *libc::c_void) -> cl_int;
-    fn clLinkProgram(context: cl_context,
-                        num_devices: cl_uint,
-                        device_list: *cl_device_id,
-                        options: *libc::c_char,
-                        num_input_programs: cl_uint,
-                        input_programs: *cl_program,
-                        pfn_notify: extern fn(program: cl_program, user_data: *libc::c_void),
-                        errcode_ret: *cl_int) -> cl_program;
-    fn clUnloadPlatformCompiler(platform: cl_platform_id) -> cl_int;
-    fn clGetKernelArgInfo(kernel: cl_kernel,
-                          arg_index: cl_uint,
-                          param_name: cl_kernel_arg_info,
-                          param_value_size: libc::size_t,
-                          param_value: *libc::c_void,
-                          param_value_size_ret: *libc::size_t) -> cl_int;
+    unsafe fn clCreateProgramWithBuiltInKernels(context: cl_context,
+                                                num_devices: cl_uint,
+                                                device_list: *cl_device_id,
+                                                kernel_names: *libc::c_char,
+                                                errcode_ret: *cl_int) -> cl_program;
+    unsafe fn clCompileProgram(program: cl_program,
+                               num_devices: cl_uint,
+                               device_list: *cl_device_id,
+                               options: *libc::c_char,
+                               num_input_headers: cl_uint,
+                               input_headers: *cl_program,
+                               header_include_names: **libc::c_char,
+                               pfn_notify: extern fn(program: cl_program, user_data: *libc::c_void),
+                               user_data: *libc::c_void) -> cl_int;
+    unsafe fn clLinkProgram(context: cl_context,
+                            num_devices: cl_uint,
+                            device_list: *cl_device_id,
+                            options: *libc::c_char,
+                            num_input_programs: cl_uint,
+                            input_programs: *cl_program,
+                            pfn_notify: extern fn(program: cl_program, user_data: *libc::c_void),
+                            errcode_ret: *cl_int) -> cl_program;
+    unsafe fn clUnloadPlatformCompiler(platform: cl_platform_id) -> cl_int;
+    unsafe fn clGetKernelArgInfo(kernel: cl_kernel,
+                                 arg_index: cl_uint,
+                                 param_name: cl_kernel_arg_info,
+                                 param_value_size: libc::size_t,
+                                 param_value: *libc::c_void,
+                                 param_value_size_ret: *libc::size_t) -> cl_int;
 
     /* Enqueued Commands APIs */
-    fn clEnqueueFillBuffer(command_queue: cl_command_queue,
-                           buffer: cl_mem,
-                           pattern: *libc::c_void,
-                           pattern_size: libc::size_t,
-                           offset: libc::size_t,
-                           size: libc::size_t,
-                           num_events_in_wait_list: cl_uint,
-                           event_wait_list: *cl_event,
-                           event: *cl_event) -> cl_int;
-    fn clEnqueueFillImage(command_queue: cl_command_queue,
-                          image: cl_mem,
-                          fill_color: *libc::c_void,
-                          origin: *libc::size_t,
-                          region: *libc::size_t,
-                          size: libc::size_t,
-                          num_events_in_wait_list: cl_uint,
-                          event_wait_list: *cl_event,
-                          event: *cl_event) -> cl_int;
-    fn clEnqueueMigrateMemObjects(command_queue: cl_command_queue,
-                                  num_mem_objects: cl_uint,
-                                  mem_objects: *cl_mem,
-                                  flags: cl_mem_migration_flags,
+    unsafe fn clEnqueueFillBuffer(command_queue: cl_command_queue,
+                                  buffer: cl_mem,
+                                  pattern: *libc::c_void,
+                                  pattern_size: libc::size_t,
+                                  offset: libc::size_t,
+                                  size: libc::size_t,
                                   num_events_in_wait_list: cl_uint,
                                   event_wait_list: *cl_event,
                                   event: *cl_event) -> cl_int;
-    fn clEnqueueMarkerWithWaitList(command_queue: cl_command_queue,
-                                   num_events_in_wait_list: cl_uint,
-                                   event_wait_list: *cl_event,
-                                   event: *cl_event) -> cl_int;
-    fn clEnqueueBarrierWithWaitList(command_queue: cl_command_queue,
-                                    num_events_in_wait_list: cl_uint,
-                                    event_wait_list: *cl_event,
-                                    event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueFillImage(command_queue: cl_command_queue,
+                                 image: cl_mem,
+                                 fill_color: *libc::c_void,
+                                 origin: *libc::size_t,
+                                 region: *libc::size_t,
+                                 size: libc::size_t,
+                                 num_events_in_wait_list: cl_uint,
+                                 event_wait_list: *cl_event,
+                                 event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueMigrateMemObjects(command_queue: cl_command_queue,
+                                         num_mem_objects: cl_uint,
+                                         mem_objects: *cl_mem,
+                                         flags: cl_mem_migration_flags,
+                                         num_events_in_wait_list: cl_uint,
+                                         event_wait_list: *cl_event,
+                                         event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueMarkerWithWaitList(command_queue: cl_command_queue,
+                                          num_events_in_wait_list: cl_uint,
+                                          event_wait_list: *cl_event,
+                                          event: *cl_event) -> cl_int;
+    unsafe fn clEnqueueBarrierWithWaitList(command_queue: cl_command_queue,
+                                           num_events_in_wait_list: cl_uint,
+                                           event_wait_list: *cl_event,
+                                           event: *cl_event) -> cl_int;
 
     /* Extension function access
      *
@@ -1165,6 +1166,6 @@ pub extern {
      * check to make sure the address is not NULL, before using or 
      * calling the returned function address.
      */
-    fn clGetExtensionFunctionAddressForPlatform(platform: cl_platform_id,
-                                                func_name: *libc::c_char) -> *libc::c_void;
+    unsafe fn clGetExtensionFunctionAddressForPlatform(platform: cl_platform_id,
+                                                       func_name: *libc::c_char) -> *libc::c_void;
 }
